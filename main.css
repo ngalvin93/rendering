@@ -1,1 +1,29 @@
 /* Type whatever CSS you need here! */
+#content {
+    display: flex;
+    flex-direction: column;
+}
+/* #nametag {
+    height: 200px;
+} */
+#nametag {
+    padding: 0;
+}
+#greeting {
+    background-color: blue;
+    color: white;
+    padding: 12px;
+}
+#name {
+    height: 150px;
+    display: flex;
+}
+#name > h1 {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.student {
+    background-color: beige;
+    border: 1px black solid;
+}
