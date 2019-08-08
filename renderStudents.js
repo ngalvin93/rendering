@@ -2,19 +2,26 @@
 function renderStudents(students) {
     function renderStudentsHtml (obj) {
     if (obj.isPresent === true) {
-        console.log('this is true')
+        return `<div class="text-center mx-auto mt-5 col-lg-4 student shadow present">
+        <div>
+            <h1>${obj.name}</h1>
+        </div>
+        <div>
+            <h2>Present</h2>
+        </div>
+        </div>
+        `
     } else {
-        console.log('this is false')
+        return `<div class="text-center mx-auto mt-5 col-lg-4 student shadow absent">
+        <div>
+            <h1>${obj.name}</h1>
+        </div>
+        <div>
+            <h2>Absent</h2>
+        </div>
+    </div>
+`
     }
-    return `<div class="text-center mt-5  col-lg-4 student">
-                <div>
-                    <h1>${obj.name}</h1>
-                </div>
-                <div>
-                    <h2>${obj.isPresent}</h2>
-                </div>
-            </div>
-    `
     }
     let newArr = students.map(renderStudentsHtml).join('')
     return newArr

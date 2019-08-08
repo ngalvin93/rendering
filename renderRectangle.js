@@ -1,7 +1,7 @@
 
 function renderRectangle(rectangle) {
     return `
-        <div class="text-center mt-5">
+        <div class="text-center mt-5 mx-auto">
             <div style="
             width: ${rectangle.width}px;
             height: ${rectangle.height}px;
