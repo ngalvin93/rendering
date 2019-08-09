@@ -1,11 +1,12 @@
 
 function renderRectangle(rectangle) {
     return `
-        <div class="text-center mt-5 mx-auto">
+        <div id="rectangle" class="text-center mt-5 mx-auto">
             <div style="
             width: ${rectangle.width}px;
             height: ${rectangle.height}px;
-            background-color: ${rectangle.color}">
+            background-color: ${rectangle.color};
+            margin: 0 auto">
             </div> 
         </div>
     `

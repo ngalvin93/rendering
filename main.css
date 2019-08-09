@@ -1,8 +1,4 @@
 /* Type whatever CSS you need here! */
-#content {
-    display: flex;
-    flex-direction: column;
-}
 /* NAMETAG */
 .nametag {
     padding: 0;
@@ -32,4 +28,14 @@
 }
 .absent {
     background-color: rgb(240, 76, 76);
+}
+/* RESTAURANT */
+#dollarSign {
+    color: green;
+    font-weight: 700;
+    font-size: 2em;
+}
+/* MOVIES */
+#poster {
+    width: 100%;
 }

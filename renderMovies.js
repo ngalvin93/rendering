@@ -1,10 +1,34 @@
 
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
-    `
+    function renderMoviesHtml (movies) {
+        let ratingString = movies.rottenTomatoesRating.toString();
+        let ratingPercentage = ratingString * 100;
+        return `
+            <div class="card mx-auto" style="width: 550px; display: flex; flex-direction: row; padding: 15px; margin-bottom: 25px; background-color: #ecedf1;">
+                <div style="flex: 1;">
+                    <img id="poster" style="padding-right: 15px; height: 100%;" src="${movies.poster}">
+                </div>
+                <div style="flex: 2; padding: 20px; background-color: white;">
+                    <div>
+                        <h2>${movies.title}</h2>
+                    </div>
+                    <div>
+                        <p>${movies.year}</p>
+                    </div>
+                    <div>
+                        <p>IMDB:<br>
+                        ${movies.imdbRating}/10</p>
+                    </div>
+                    <div>
+                        <p>Rotten Tomatoes:<br>
+                        ${ratingPercentage}%</p>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+    let finalArr = movies.map(renderMoviesHtml).join('')
+    return finalArr;
 }
 
 function movies() {
