@@ -6,7 +6,7 @@ function renderMovies(movies) {
         return `
             <div class="card mx-auto" style="width: 550px; display: flex; flex-direction: row; padding: 15px; margin-bottom: 25px; background-color: #ecedf1;">
                 <div style="flex: 1;">
-                    <img id="poster" style="padding-right: 15px; height: 100%;" src="${movies.poster}">
+                    <img id="poster" style="padding-right: 15px; object-fit: contain;" src="${movies.poster}">
                 </div>
                 <div style="flex: 2; padding: 20px; background-color: white;">
                     <div>

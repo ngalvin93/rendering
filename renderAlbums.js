@@ -1,11 +1,54 @@
 
 function renderAlbums(albums) {
+// return html for artist section
+return albums.map(renderAlbumSection).join('')
+}
+function renderAlbumSection (albumInfo) {
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+    <div>
+        <div>
+            <h1 style="text-transform: uppercase;">${albumInfo.artist}</h1>
         </div>
+        <hr>
+        <div>
+            <h2>${mapAlbum(albumInfo.albums)}</h2>
+        </div>
+    </div>
     `
 }
+function mapAlbum (toAlbumDetail) {
+    return toAlbumDetail.map(mapAlbumDetail).join('')
+}
+function mapAlbumDetail (albumDetail) {
+    return `
+    <div>
+        <div>
+            <div>
+                <img style="width: 100px; display: inline;" src="${albumDetail.albumCover}">
+                <span><h2 style="display: inline;">${albumDetail.title}</h2></span>
+            </div>
+            <div>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    ${medianSongs(albumDetail.songs)}
+                </ul>
+            </div>
+        </div>
+    </div>
+    `
+}
+function medianSongs (songList) {
+    return songList.map(songDetail).join("")
+}
+function songDetail (songName) {
+    return `
+    <li style="font-size: 16px;">
+        <span>${songName.title}</span>
+        <span style="float: right;">${songName.length}</span>
+    </li>
+    <hr>
+    `
+}
+
 
 function albums() {
     var content = document.getElementById('content');
